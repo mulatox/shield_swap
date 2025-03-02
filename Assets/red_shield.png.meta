@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 391ce252f18f7e842b3aba77300dd42f
+guid: 998d6c5e2be2da14b9a7c1e757191806
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9136181877773985153
-    second: coracao_0
+      213: -3137508536246817594
+    second: red_shield_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coracao_0
+      name: red_shield_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 625
-        height: 598
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f7a9bebdcf2c53180800000000000000
-      internalID: -9136181877773985153
+      spriteID: 6cca0490c945574d0800000000000000
+      internalID: -3137508536246817594
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      coracao_0: -9136181877773985153
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
