@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 
 
@@ -18,6 +20,10 @@ public class PlayerController : MonoBehaviour
     float nextTimeDash = 0;
 
     bool isDashing = false;
+
+    public TextMeshProUGUI healthPlayerText;
+    float healthPlayer = 10;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {   
@@ -34,6 +40,7 @@ public class PlayerController : MonoBehaviour
          if(Input.GetKeyDown(KeyCode.Mouse1) && Time.time >= nextTimeDash)
         {
             Dash();
+            healthPlayerText.text = healthPlayer.ToString();
         }
     }
     void FixedUpdate()
@@ -54,18 +61,16 @@ public class PlayerController : MonoBehaviour
 
        }
 
-
-       
-
     }
 
     void Dash()
     {
         isDashing = true;
+        //Vector2 dashDirection = new Vector2(moveX,moveY);
         nextTimeDash = Time.time + dashCoolDown;
-         rb.linearVelocity = transform.up * speedDash;
-         Invoke("StopDash",dashDuration);
-        
+        rb.linearVelocity = playerMovement * speedDash;
+        Invoke("StopDash",dashDuration);
+        healthPlayer--;
     }
 
     void StopDash()

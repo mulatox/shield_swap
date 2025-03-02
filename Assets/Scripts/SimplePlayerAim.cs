@@ -17,11 +17,11 @@ public class SimpleAim : MonoBehaviour
         
          mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        mousePosition.z = transform.position.z;
+         mousePosition.z = transform.position.z;
 
          direction = mousePosition - transform.position;
 
-        transform.up = direction;
+         transform.up = direction;
         
          
          
