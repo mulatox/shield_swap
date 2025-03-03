@@ -23,9 +23,9 @@ public class PlayerController : MonoBehaviour
 
     bool isBlueShieldActive = false;
 
-    GameObject blueshield;
+    public GameObject blueshield;
 
-    GameObject redShield;
+    public GameObject redShield;
 
     public Sprite shieldSpriteRedShield;
 
@@ -101,6 +101,10 @@ public class PlayerController : MonoBehaviour
     void CreateShield()
     {
             
+            if(currentShield != null)
+            {
+                Destroy(currentShield);
+            }
             
             if(isBlueShieldActive)
             {
