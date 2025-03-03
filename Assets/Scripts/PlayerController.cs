@@ -11,13 +11,27 @@ public class PlayerController : MonoBehaviour
     float moveX;
     float moveY;
 
-    float speedDash = 20f;
+    float speedDash = 8f;
 
     float dashDuration = 0.2f;
 
-    float dashCoolDown = 1;
+    float dashCoolDown = 0.2f;
 
     float nextTimeDash = 0;
+
+     private GameObject currentShield;
+
+    bool isBlueShieldActive = false;
+
+    GameObject blueshield;
+
+    GameObject redShield;
+
+    public Sprite shieldSpriteRedShield;
+
+    public  Sprite shieldSpriteBlueShield;
+
+    public Transform spawnShield;
 
     bool isDashing = false;
 
@@ -26,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
-    {   
+    { 
         if(rb == null)
         {
             rb = GetComponent<Rigidbody2D>();
@@ -41,6 +55,11 @@ public class PlayerController : MonoBehaviour
         {
             Dash();
             healthPlayerText.text = healthPlayer.ToString();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            CreateShield();
         }
     }
     void FixedUpdate()
@@ -60,7 +79,6 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(rb.position + playerMovement * speed * Time.fixedDeltaTime);
 
        }
-
     }
 
     void Dash()
@@ -78,4 +96,25 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         isDashing = false;
     }
+
+
+    void CreateShield()
+    {
+            
+            
+            if(isBlueShieldActive)
+            {
+                currentShield = Instantiate(blueshield,spawnShield.position,spawnShield.rotation,spawnShield.transform);
+                currentShield.GetComponent<SpriteRenderer>().sprite = shieldSpriteBlueShield;
+            }
+            else
+            {
+                currentShield = Instantiate(redShield,spawnShield.position,spawnShield.rotation,spawnShield.transform);
+                currentShield.GetComponent<SpriteRenderer>().sprite = shieldSpriteRedShield;
+            }
+
+            isBlueShieldActive = !isBlueShieldActive;
+
+    }
+    
 }
