@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7813053058461549228}
   - component: {fileID: 1231918539517496340}
   - component: {fileID: 2321479155532723733}
+  - component: {fileID: -7391455909838077876}
   m_Layer: 0
   m_Name: RedShield
   m_TagString: Untagged
@@ -110,3 +111,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-7391455909838077876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451175042550365217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139ff4597abefcb46bdd3635d9b8ed65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadeRotacao: 100

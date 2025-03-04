@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6381225516894319137}
   - component: {fileID: -4571015936278813149}
+  - component: {fileID: 8120766910243813094}
   m_Layer: 0
   m_Name: BlueShield
   m_TagString: Untagged
@@ -87,3 +88,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8120766910243813094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494578247907337688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139ff4597abefcb46bdd3635d9b8ed65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
