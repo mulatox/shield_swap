@@ -124,6 +124,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -272,7 +285,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shield Elliptic Smooth Hit Back 96x128 Green_0: -187245229439313124
+      Shield Elliptic Smooth Hit Back 96x128 Green_1: -5995986930727510332
+      Shield Elliptic Smooth Hit Back 96x128 Green_2: -1384244796609185913
+      Shield Elliptic Smooth Hit Back 96x128 Green_3: 8256300925395242535
+      Shield Elliptic Smooth Hit Back 96x128 Green_4: 6154395945642484443
+      Shield Elliptic Smooth Hit Back 96x128 Green_5: 7353993594739153039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

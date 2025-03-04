@@ -133,6 +133,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -347,7 +360,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shield Round Magic BuildUp simple 512x512 Blue_0: -3490523460943412031
+      Shield Round Magic BuildUp simple 512x512 Blue_1: 8459397904020268765
+      Shield Round Magic BuildUp simple 512x512 Blue_2: 9189939102725744172
+      Shield Round Magic BuildUp simple 512x512 Blue_3: -2104311941653158888
+      Shield Round Magic BuildUp simple 512x512 Blue_4: -8111890101221609377
+      Shield Round Magic BuildUp simple 512x512 Blue_5: 3593586542106727200
+      Shield Round Magic BuildUp simple 512x512 Blue_6: 9097331884548013142
+      Shield Round Magic BuildUp simple 512x512 Blue_7: 1596028719163124718
+      Shield Round Magic BuildUp simple 512x512 Blue_8: 7613170864248053700
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

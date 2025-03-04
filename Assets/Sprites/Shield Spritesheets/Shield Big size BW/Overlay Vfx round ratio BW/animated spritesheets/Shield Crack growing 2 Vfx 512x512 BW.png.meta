@@ -121,6 +121,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -247,7 +260,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Shield Crack growing 2 Vfx 512x512 BW_0: 7286291779039777900
+      Shield Crack growing 2 Vfx 512x512 BW_1: 7342274520328051170
+      Shield Crack growing 2 Vfx 512x512 BW_2: 4318376941347860015
+      Shield Crack growing 2 Vfx 512x512 BW_3: -1116889885422157921
+      Shield Crack growing 2 Vfx 512x512 BW_4: 3215075546427667477
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
