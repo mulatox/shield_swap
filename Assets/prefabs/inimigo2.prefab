@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58cc3533b64c054296a3f6b84dd1e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 3
   player: {fileID: 0}
   tiroPrefab: {fileID: 4940539865236143429, guid: 30910c892c726fa468524e428c5d3032, type: 3}
   velocidade: 2

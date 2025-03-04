@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Monstro
   - TiroPlayer
+  - TiroInimigo
+  - TiroBlue
+  - TiroRed
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 
 public class PlayerController : MonoBehaviour
@@ -108,17 +109,84 @@ public class PlayerController : MonoBehaviour
             
             if(isBlueShieldActive)
             {
-                currentShield = Instantiate(blueshield,spawnShield.position,spawnShield.rotation,spawnShield.transform);
-                currentShield.GetComponent<SpriteRenderer>().sprite = shieldSpriteBlueShield;
+                currentShield = Instantiate(redShield,spawnShield.position,spawnShield.rotation,spawnShield.transform);
+                currentShield.GetComponent<SpriteRenderer>().sprite = shieldSpriteRedShield;
             }
             else
             {
-                currentShield = Instantiate(redShield,spawnShield.position,spawnShield.rotation,spawnShield.transform);
-                currentShield.GetComponent<SpriteRenderer>().sprite = shieldSpriteRedShield;
+                currentShield = Instantiate(blueshield,spawnShield.position,spawnShield.rotation,spawnShield.transform);
+                currentShield.GetComponent<SpriteRenderer>().sprite = shieldSpriteBlueShield;
             }
 
             isBlueShieldActive = !isBlueShieldActive;
 
+    }
+
+    // ✅ Método para tomar dano quando o player for atingido
+    public void TomarDano()
+    {
+        healthPlayer--; // Reduz a vida do player
+        AtualizarHUD(); // Atualiza o texto na tela
+
+        // Efeito de piscar ao ser atingido
+        StartCoroutine(PiscarDano());
+
+        if (healthPlayer <= 0)
+        {
+            Debug.Log("Player morreu!");
+            // Aqui você pode chamar uma tela de Game Over ou reiniciar a cena
+        }
+    }
+
+    // Atualiza o HUD da vida do jogador
+    private void AtualizarHUD()
+    {
+        healthPlayerText.text = healthPlayer.ToString();
+    }
+
+    // ✅ Efeito de piscar ao tomar dano
+    private IEnumerator PiscarDano()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+        for (int i = 0; i < 3; i++) // Pisca 3 vezes
+        {
+            spriteRenderer.color = new Color(1f, 1f, 1f, 0.3f); // Transparente
+            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.color = Color.white; // Volta ao normal
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    // ✅ Detecta se o player foi atingido por um tiro do monstro
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("TiroBlue")) // Se for um tiro azul
+        {
+            if (!isBlueShieldActive) // Só causa dano se o BlueShield NÃO estiver ativo
+            {
+                Debug.Log("Player atingido pelo Tiro Azul!");
+                TomarDano();
+            }
+            else
+            {
+                Debug.Log("BlueShield bloqueou o tiro azul!");
+            }
+            Destroy(collision.gameObject); // O tiro sempre desaparece ao colidir
+        }
+        else if (collision.CompareTag("TiroRed")) // Se for um tiro vermelho
+        {
+            if (isBlueShieldActive) // Só causa dano se o RedShield NÃO estiver ativo
+            {
+                Debug.Log("Player atingido pelo Tiro Vermelho!");
+                TomarDano();
+            }
+            else
+            {
+                Debug.Log("RedShield bloqueou o tiro vermelho!");
+            }
+            Destroy(collision.gameObject); // O tiro sempre desaparece ao colidir
+        }
     }
     
 }
