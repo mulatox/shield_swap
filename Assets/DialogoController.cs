@@ -1,40 +1,50 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections.Generic;
+
 public class DialogoController : MonoBehaviour
 {
-    public GameObject painelDialogo; // Painel da caixa de diálogo
-    public Image portraitImage; // Imagem do personagem
-    public TextMeshProUGUI dialogoText; // Texto do diálogo
-    public float velocidadeTexto = 0.05f; // Velocidade da escrita do texto
+    public GameObject painelDialogo;
+    public Image portraitImage;
+    public TextMeshProUGUI dialogoText;
+    public float velocidadeTexto = 0.05f;
+    public Sprite personagemPortrait; // Imagem inicial do personagem
 
-    private Queue<string> falas; // Fila de falas
+    private Queue<string> falas;
     private bool textoCompleto = false;
 
     void Start()
     {
-        falas = new Queue<string>(); // Inicializa a fila de falas
-        painelDialogo.SetActive(false); // Oculta a caixa de diálogo inicialmente
+        falas = new Queue<string>();
+        painelDialogo.SetActive(false);
+
+        // ✅ Chama o diálogo automaticamente ao iniciar a cena
+        string[] falasIniciais = {
+            "Iniciando Treinamento... Destrua os monstros atirando no mouse...",
+            "Primeira Onda de inimigos iniciada!",
+            "Boa Sorte!"
+        };
+
+        IniciarDialogo(personagemPortrait, falasIniciais);
+        
     }
 
-    // Método para iniciar o diálogo
     public void IniciarDialogo(Sprite portrait, string[] falasArray)
     {
-        painelDialogo.SetActive(true); // Mostra a caixa de diálogo
-        portraitImage.sprite = portrait; // Define a imagem do personagem
+        painelDialogo.SetActive(true);
+        portraitImage.sprite = portrait;
         falas.Clear();
 
         foreach (string fala in falasArray)
         {
-            falas.Enqueue(fala); // Adiciona cada fala na fila
+            falas.Enqueue(fala);
         }
 
         MostrarProximaFala();
     }
 
-    // Método para mostrar a próxima fala
     public void MostrarProximaFala()
     {
         if (falas.Count == 0)
@@ -44,11 +54,10 @@ public class DialogoController : MonoBehaviour
         }
 
         string falaAtual = falas.Dequeue();
-        StopAllCoroutines(); // Para qualquer texto que ainda esteja sendo exibido
+        StopAllCoroutines();
         StartCoroutine(EscreverTexto(falaAtual));
     }
 
-    // Animação do texto aparecendo progressivamente
     IEnumerator EscreverTexto(string fala)
     {
         textoCompleto = false;
@@ -61,15 +70,15 @@ public class DialogoController : MonoBehaviour
         }
 
         textoCompleto = true;
+        yield return new WaitForSeconds(1.8f);
+        MostrarProximaFala();
     }
 
-    // Método para fechar a caixa de diálogo
     public void FecharDialogo()
     {
         painelDialogo.SetActive(false);
     }
 
-    // Método para avançar no diálogo ao pressionar um botão
     public void AvancarDialogo()
     {
         if (textoCompleto)
@@ -79,7 +88,7 @@ public class DialogoController : MonoBehaviour
         else
         {
             StopAllCoroutines();
-            dialogoText.text = falas.Peek(); // Exibe a fala completa imediatamente
+            dialogoText.text = falas.Peek();
             textoCompleto = true;
         }
     }
