@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 52ca6ad4315d0314ea956d6347606f18
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 301430
+  packageName: Easy Cutscene (Dialogue and Cutscene Creator)
+  packageVersion: 1.0
+  assetPath: Assets/Easy Cutscene/Assets/Scripts/EcProps.cs
+  uploadId: 734189

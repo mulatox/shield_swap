@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cd4ef13d6d6374caf69dc82cb62d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 3
   player: {fileID: 0}
   tiroPrefab: {fileID: 4940539865236143429, guid: 30910c892c726fa468524e428c5d3032, type: 3}
   velocidade: 2
@@ -182,7 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cd4ef13d6d6374caf69dc82cb62d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vida: 3
   player: {fileID: 0}
-  tiroPrefab: {fileID: 4940539865236143429, guid: 30910c892c726fa468524e428c5d3032, type: 3}
-  velocidade: 2
+  tiroPrefab: {fileID: 4940539865236143429, guid: d9fd9234f21de174c9969283b149b6b7, type: 3}
+  velocidade: 4
   tempoEntreTiros: 2

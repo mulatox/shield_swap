@@ -168,7 +168,7 @@ MonoBehaviour:
   vida: 3
   player: {fileID: 0}
   tiroPrefab: {fileID: 4940539865236143429, guid: 30910c892c726fa468524e428c5d3032, type: 3}
-  velocidade: 2
+  velocidade: 4
   tempoEntreTiros: 2
   raioCirculo: 1.5
   velocidadeRotacao: 2
