@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Monstro : MonoBehaviour
 {
-    public Transform player; // Referência ao jogador
+    public GameObject player; // Referência ao jogador
     public GameObject tiroPrefab; // Prefab da bolinha de tiro
     public float velocidade = 2f; // Velocidade do monstro
     public float tempoEntreTiros = 2f; // Tempo entre os ataques
@@ -19,7 +19,7 @@ public class Monstro : MonoBehaviour
         // Faz o monstro seguir o jogador
         if (player != null)
         {
-            Vector2 direcao = (player.position - transform.position).normalized;
+            Vector2 direcao = (player.transform.position - transform.position).normalized;
             transform.position += (Vector3)direcao * velocidade * Time.deltaTime;
         }
     }
@@ -35,7 +35,7 @@ public class Monstro : MonoBehaviour
 
             if (rb != null)
             {
-                Vector2 direcao = (player.position - transform.position).normalized;
+                Vector2 direcao = (player.transform.position - transform.position).normalized;
                 rb.linearVelocity = Quaternion.Euler(0, 0, i * 10 - 10) * direcao * 5f; // Pequena variação de ângulo
             }
         }

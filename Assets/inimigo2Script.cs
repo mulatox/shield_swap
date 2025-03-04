@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class inimigo2Script : MonoBehaviour
 {
-    public Transform player; // Referência ao jogador
+    public GameObject player; // Referência ao jogador
     public GameObject tiroPrefab; // Prefab da bolinha de tiro
     public float velocidade = 2f; // Velocidade do monstro
     public float tempoEntreTiros = 2f; // Tempo entre os ataques
@@ -23,7 +23,7 @@ public class inimigo2Script : MonoBehaviour
         if (player != null)
         {
             // Direção para o jogador
-            Vector2 direcao = (player.position - transform.position).normalized;
+            Vector2 direcao = (player.transform.position - transform.position).normalized;
 
             // Atualiza o ângulo para criar um movimento circular
             angulo += velocidadeRotacao * Time.deltaTime;
@@ -31,7 +31,7 @@ public class inimigo2Script : MonoBehaviour
             float deslocamentoY = Mathf.Sin(angulo) * raioCirculo;
 
             // Calcula a posição final combinando a direção ao player + deslocamento circular
-            Vector2 novaPosicao = (Vector2)player.position - direcao * raioCirculo + new Vector2(deslocamentoX, deslocamentoY);
+            Vector2 novaPosicao = (Vector2)player.transform.position - direcao * raioCirculo + new Vector2(deslocamentoX, deslocamentoY);
 
             // Move o inimigo para a nova posição
             rb.MovePosition(Vector2.Lerp(transform.position, novaPosicao, velocidade * Time.deltaTime));
@@ -49,7 +49,7 @@ public class inimigo2Script : MonoBehaviour
 
             if (rbTiro != null)
             {
-                Vector2 direcao = (player.position - transform.position).normalized;
+                Vector2 direcao = (player.transform.position - transform.position).normalized;
                 float angulo = (i - 1) * 10f; // -10, 0 e 10 graus para espalhar os tiros
                 Vector2 direcaoRotacionada = Quaternion.Euler(0, 0, angulo) * direcao;
 
