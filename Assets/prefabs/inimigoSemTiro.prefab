@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1306337339099555109}
   - component: {fileID: 213529937127219104}
-  - component: {fileID: 2994169438344779684}
   - component: {fileID: -1121665613914158948}
   - component: {fileID: -355584770978414877}
-  - component: {fileID: 1292230039843254622}
+  - component: {fileID: -6437186902702618782}
   m_Layer: 0
-  m_Name: inimigo1
+  m_Name: inimigoSemTiro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,23 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2994169438344779684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4969568956262038787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24cd4ef13d6d6374caf69dc82cb62d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: 3
-  player: {fileID: 0}
-  tiroPrefab: {fileID: 4940539865236143429, guid: 30910c892c726fa468524e428c5d3032, type: 3}
-  velocidade: 2
-  tempoEntreTiros: 2
 --- !u!50 &-1121665613914158948
 Rigidbody2D:
   serializedVersion: 5
@@ -171,7 +153,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.74
---- !u!114 &1292230039843254622
+--- !u!114 &-6437186902702618782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,11 +162,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4969568956262038787}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24cd4ef13d6d6374caf69dc82cb62d72, type: 3}
+  m_Script: {fileID: 11500000, guid: da0110cd9ebe3ff489b036c547bace5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 3
   player: {fileID: 0}
-  tiroPrefab: {fileID: 4940539865236143429, guid: d9fd9234f21de174c9969283b149b6b7, type: 3}
-  velocidade: 3
+  velocidade: 2.5
   tempoEntreTiros: 2

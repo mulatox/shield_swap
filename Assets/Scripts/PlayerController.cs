@@ -6,13 +6,16 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public DashEffect dashEffect;
+
     public float speed = 5f;
     private Rigidbody2D rb;
     Vector2 playerMovement;
     float moveX;
     float moveY;
 
-    float speedDash = 8f;
+    public float speedDash = 8f;
 
     float dashDuration = 0.2f;
 
@@ -83,20 +86,24 @@ public class PlayerController : MonoBehaviour
     }
 
     void Dash()
-    {
-        isDashing = true;
-        //Vector2 dashDirection = new Vector2(moveX,moveY);
-        nextTimeDash = Time.time + dashCoolDown;
-        rb.linearVelocity = playerMovement * speedDash;
-        Invoke("StopDash",dashDuration);
-        healthPlayer--;
-    }
+{
+    isDashing = true;
+    nextTimeDash = Time.time + dashCoolDown;
+    rb.linearVelocity = playerMovement * speedDash;
 
-    void StopDash()
-    {
-        rb.linearVelocity = Vector2.zero;
-        isDashing = false;
-    }
+    dashEffect.StartDashEffect(); // ✅ Inicia o efeito fantasma
+    Invoke("StopDash", dashDuration);
+}
+
+void StopDash()
+{
+    rb.linearVelocity = Vector2.zero;
+    isDashing = false;
+    
+    dashEffect.StopDashEffect(); // ✅ Para o efeito fantasma
+}
+
+    
 
 
     void CreateShield()
