@@ -1221,21 +1221,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1665370629296321156, guid: 38565a2da8671ca4cb1e7127ed59ac8c, type: 3}
   m_PrefabInstance: {fileID: 2052461639945014438}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1644864013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1644864004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 248bcdd922e0dfd47b60d5ff34c73605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ghostPrefab: {fileID: 1933169597887747761, guid: 90449e26be5a2da44b26e9df5b4e0020, type: 3}
-  ghostLifetime: 0.3
-  ghostSpawnRate: 0.05
 --- !u!1 &1661897172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,14 +1859,6 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1694350822144312190, guid: 38565a2da8671ca4cb1e7127ed59ac8c, type: 3}
-      propertyPath: speedDash
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 1694350822144312190, guid: 38565a2da8671ca4cb1e7127ed59ac8c, type: 3}
-      propertyPath: dashEffect
-      value: 
-      objectReference: {fileID: 1644864013}
-    - target: {fileID: 1694350822144312190, guid: 38565a2da8671ca4cb1e7127ed59ac8c, type: 3}
       propertyPath: healthPlayerText
       value: 
       objectReference: {fileID: 44823649}
@@ -1928,10 +1905,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1665370629296321156, guid: 38565a2da8671ca4cb1e7127ed59ac8c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1644864013}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38565a2da8671ca4cb1e7127ed59ac8c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

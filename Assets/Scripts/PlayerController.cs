@@ -39,6 +39,14 @@ public class PlayerController : MonoBehaviour
 
     bool isDashing = false;
 
+    public AudioClip dashSound; //  Som do Dash
+    
+    public AudioClip damageSound; //  Som ao Receber Dano
+
+    public AudioClip deathSound; //  Som ao Receber Dano
+
+     private AudioSource audioSource;
+
     public TextMeshProUGUI healthPlayerText;
     float healthPlayer = 10;
 
@@ -49,7 +57,7 @@ public class PlayerController : MonoBehaviour
         {
             rb = GetComponent<Rigidbody2D>();
         }
-    
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -92,6 +100,7 @@ public class PlayerController : MonoBehaviour
     rb.linearVelocity = playerMovement * speedDash;
 
     dashEffect.StartDashEffect(); // ✅ Inicia o efeito fantasma
+    PlaySound(dashSound); //
     Invoke("StopDash", dashDuration);
 }
 
@@ -140,8 +149,18 @@ void StopDash()
 
         if (healthPlayer <= 0)
         {
+            PlaySound(deathSound); //
             Debug.Log("Player morreu!");
             // Aqui você pode chamar uma tela de Game Over ou reiniciar a cena
+        }
+        PlaySound(damageSound);
+    }
+
+    void PlaySound(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            audioSource.PlayOneShot(clip); // Toca o som sem cortar o anterior
         }
     }
 
