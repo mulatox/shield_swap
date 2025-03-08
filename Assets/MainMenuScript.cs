@@ -13,6 +13,7 @@ public class MainMenuScript : MonoBehaviour
     public void OpenCredits()
     {
         Debug.Log("Abrindo Créditos...");
+        SceneManager.LoadScene("CreditosScene");
         // Aqui você pode abrir uma nova cena de créditos ou um painel de créditos
     }
 
