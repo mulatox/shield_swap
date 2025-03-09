@@ -23,7 +23,8 @@ public class DialogoController : MonoBehaviour
         // ✅ Chama o diálogo automaticamente ao iniciar a cena
         string[] falasIniciais = {
             "Iniciando Treinamento... Destrua os monstros atirando no mouse...",
-            "Primeira Onda de inimigos iniciada!",
+            "Use W,A,S,D para movimentar",
+            "Voce tambem pode usar o botão direito do mouse para dar Dash junto com W,A,S,D",
             "Boa Sorte!"
         };
 
@@ -34,6 +35,7 @@ public class DialogoController : MonoBehaviour
     public void IniciarDialogo(Sprite portrait, string[] falasArray)
     {
         painelDialogo.SetActive(true);
+       
         portraitImage.sprite = portrait;
         falas.Clear();
 
@@ -66,16 +68,17 @@ public class DialogoController : MonoBehaviour
         foreach (char letra in fala.ToCharArray())
         {
             dialogoText.text += letra;
-            yield return new WaitForSeconds(velocidadeTexto);
+            yield return new WaitForSecondsRealtime(velocidadeTexto);
         }
 
         textoCompleto = true;
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSecondsRealtime(1.8f);
         MostrarProximaFala();
     }
 
     public void FecharDialogo()
     {
+         
         painelDialogo.SetActive(false);
     }
 
