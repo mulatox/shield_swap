@@ -8,6 +8,7 @@ public class MonstroSemTiro : MonoBehaviour
     public GameObject player; // Referência ao jogador
     public float velocidade = 2f; // Velocidade do monstro
     public float tempoEntreTiros = 2f; // Tempo entre os ataques
+    public EnemyManagerController enemyManager;
 
     private void Start()
     {
@@ -35,6 +36,11 @@ public class MonstroSemTiro : MonoBehaviour
         vida--;
         if (vida <= 0)
         {
+            if (enemyManager != null)
+        {
+            enemyManager.MonstroMorreu(); // ✅ Avisa ao EnemyManager que morreu
+        }    
+
             Destroy(gameObject); // Destroi o monstro quando a vida chega a 0
         }
     }

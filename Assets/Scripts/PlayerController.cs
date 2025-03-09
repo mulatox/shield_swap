@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI healthPlayerText;
     float healthPlayer = 10;
 
+    public GameOverController gameOverController;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     { 
@@ -76,7 +78,9 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        
+        if (healthPlayer <= 0){
+            return;
+        }
         moveX = Input.GetAxisRaw("Horizontal");
         
         
@@ -151,6 +155,7 @@ void StopDash()
         {
             PlaySound(deathSound); //
             Debug.Log("Player morreu!");
+             gameOverController.AtivarGameOver();
             // Aqui você pode chamar uma tela de Game Over ou reiniciar a cena
         }
         PlaySound(damageSound);

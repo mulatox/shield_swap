@@ -10,6 +10,8 @@ public class Monstro : MonoBehaviour
     public float velocidade = 2f; // Velocidade do monstro
     public float tempoEntreTiros = 2f; // Tempo entre os ataques
 
+    public EnemyManagerController enemyManager;
+
     private void Start()
     {
         // Inicia o ataque repetitivo
@@ -51,6 +53,11 @@ public class Monstro : MonoBehaviour
         vida--;
         if (vida <= 0)
         {
+            if (enemyManager != null)
+        {
+            enemyManager.MonstroMorreu(); // ✅ Avisa ao EnemyManager que morreu
+        }
+        
             Destroy(gameObject); // Destroi o monstro quando a vida chega a 0
         }
     }

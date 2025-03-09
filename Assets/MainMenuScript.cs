@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-  public string nomeDaCenaDoJogo = "ScenaTeste"; // Nome da cena principal do jogo
+  public string nomeDaCenaDoJogo = "ScenaTeste2"; // Nome da cena principal do jogo
 
     public void StartGame()
     {

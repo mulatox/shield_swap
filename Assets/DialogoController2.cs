@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DialogoController : MonoBehaviour
+public class DialogoController2 : MonoBehaviour
 {
     public GameObject painelDialogo;
     public Image portraitImage;
@@ -22,8 +22,8 @@ public class DialogoController : MonoBehaviour
 
         // ✅ Chama o diálogo automaticamente ao iniciar a cena
         string[] falasIniciais = {
-            "Iniciando Fase 1 do Treinamento... Destrua os monstros atirando no mouse...",
-            "Use W,A,S,D para movimentar e junto com botão direito do mouse para DASH!",
+            "Iniciando Fase 2 do treinamento...",
+            "Use tecla espaço para ativar o protocolo shield swap!",
             "Boa Sorte!"
         };
 

@@ -14,6 +14,8 @@ public class inimigo2Script : MonoBehaviour
     private float angulo; // Ângulo para movimento circular
     private SpriteRenderer spriteRenderer;
 
+    public EnemyManagerController enemyManager;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -78,6 +80,11 @@ public class inimigo2Script : MonoBehaviour
         vida--;
         if (vida <= 0)
         {
+            if (enemyManager != null)
+        {
+            enemyManager.MonstroMorreu(); // ✅ Avisa ao EnemyManager que morreu
+        }        
+
             Destroy(gameObject); // Destroi o monstro quando a vida chega a 0
         }
     }
