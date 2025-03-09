@@ -18,7 +18,7 @@ public class GameOverController : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1f; // ✅ Retorna ao normal antes de reiniciar
-        SceneManager.LoadScene("StartScene2"); // ✅ Reinicia a cena atual
+        SceneManager.LoadScene("ScenaTeste2"); // ✅ Reinicia a cena atual
     }
 
     public void GoToMenu()

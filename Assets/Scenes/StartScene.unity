@@ -872,7 +872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a9fca34b3a9c2479f3bec04cc7a56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nomeDaCenaDoJogo: ScenaTeste
+  nomeDaCenaDoJogo: ScenaTeste2
 --- !u!4 &998221581
 Transform:
   m_ObjectHideFlags: 0

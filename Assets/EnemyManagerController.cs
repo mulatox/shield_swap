@@ -6,6 +6,8 @@ public class EnemyManagerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created{
     private int totalMonstros;
 
+    public string proximaCena="ScenaTeste";
+
     void Start()
     {
         // Conta quantos monstros existem na cena no início
@@ -26,6 +28,6 @@ public class EnemyManagerController : MonoBehaviour
     void IniciarProximaCena()
     {
         Debug.Log("Todos os monstros foram derrotados! Carregando próxima cena...");
-        SceneManager.LoadScene("ScenaTeste3"); // Substitua pelo nome real da sua próxima cena
+        SceneManager.LoadScene(proximaCena); // Substitua pelo nome real da sua próxima cena
     }
 }
